@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerId
   let score = 0
   let clicks = 0
+  let menuClicked = false
   const colors = [
     'red',
     'orange',
@@ -293,6 +294,62 @@ document.addEventListener('DOMContentLoaded', () => {
     buttTrack4.addEventListener('click', () => {
       playTrack4()
     })
+    
+    buttTrack1.addEventListener('click', () => {
+      if(menuClicked == true)
+      {
+        BGMPause()
+        menuClicked = false
+      }
+      else{
+        menuClicked = true
+        var chosener = sessionStorage.getItem(chosen)
+        myMusic = new Audio(musicList[chosener])
+        BGMPlay()
+      }
+    })
+    
+    buttTrack2.addEventListener('click', () => {
+      if(menuClicked == true)
+      {
+        BGMPause()
+        menuClicked = false
+      }
+      else{
+        menuClicked = true
+        var chosener = sessionStorage.getItem(chosen)
+        myMusic = new Audio(musicList[chosener])
+        BGMPlay()
+      }
+
+    })
+    buttTrack3.addEventListener('click', () => {
+      if(menuClicked == true)
+      {
+        BGMPause()
+        menuClicked = false
+      }
+      else{
+        menuClicked = true
+        var chosener = sessionStorage.getItem(chosen)
+        myMusic = new Audio(musicList[chosener])
+        BGMPlay()
+      }
+    })
+
+    buttTrack4.addEventListener('click', () => {
+      if(menuClicked == true)
+      {
+        BGMPause()
+        menuClicked = false
+      }
+      else{
+        menuClicked = true
+        var chosener = sessionStorage.getItem(chosen)
+        myMusic = new Audio(musicList[chosener])
+        BGMPlay()
+      }
+    })
     startButt.addEventListener('click', () => {
       if (timerId) {
         pauseBool = true
@@ -346,5 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timerId)
       }
     }
-    
+
   })
+  
