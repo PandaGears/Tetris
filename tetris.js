@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  var chosen = 0
-  var musicList = ["./audio/1 - Track 1.mp3",
+  const chosen = 0
+  const musicList = ["./audio/1 - Track 1.mp3",
   "./audio/2 - Track 2.mp3",
   "./audio/3 - Track 3.mp3",
   "./audio/4 - Track 4.mp3"]
@@ -33,19 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     'purple'
   ]
   function playTrack1() {
-    chosen = 0
+    sessionStorage.setItem(chosen , 0)
     return chosen
   }
   function playTrack2() {
-    chosen = 1
+    sessionStorage.setItem(chosen, 1)
     return chosen
   }
   function playTrack3() {
-    chosen = 2
+    sessionStorage.setItem(chosen, 2)
     return chosen
   }
   function playTrack4() {
-    chosen = 3
+    sessionStorage.setItem(chosen, 3)
     return chosen
   }
   function clearPlay() {
@@ -308,7 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
           nextRandom = Math.floor(Math.random()*theTetrominoes.length)
           displayShape()
         }
-        myMusic = new Audio(musicList[chosen])
+        var chosener = sessionStorage.getItem(chosen)
+        myMusic = new Audio(musicList[chosener])
         BGMPlay()
         clicks++
       }
