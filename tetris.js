@@ -124,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPosition = 4
     let currentRotation = 0
     
-    console.log(theTetrominoes[0][0])
-    
     //randomly select a Tetromino and its first rotation
     let random = Math.floor(Math.random()*theTetrominoes.length)
     let current = theTetrominoes[random][currentRotation]
@@ -191,6 +189,18 @@ document.addEventListener('DOMContentLoaded', () => {
         addScore()
         gameOver()
       }
+      else if(current.some(index=> squares[currentPosition + index].classList.contains('taken'))) {
+        current.forEach(index => squares[currentPosition + index + 1].classList.add('taken'))
+        landPlay()
+        random = nextRandom
+        nextRandom = Math.floor(Math.random() * theTetrominoes.length)
+        current = theTetrominoes[random][currentRotation]
+        currentPosition = 4
+        draw()
+        displayShape()
+        addScore()
+        gameOver()
+        }
     }
     
     function moveLeft() {
