@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttTrack2 = document.querySelector('#butt2')
   const buttTrack3 = document.querySelector('#butt3')
   const buttTrack4 = document.querySelector('#butt4')
-  const resetButt = document.querySelector('#resetButton')
   const width = 10
   let nextRandom = 0
   let timerId
