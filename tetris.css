@@ -4,7 +4,12 @@
     color: aliceblue;
 }
 
-
+.forceMargin {
+    margin-left: 50% !important;
+}
+.forceMarginContainer {
+    margin-left: 45% !important;
+}
 body {
     background-color: var(--background);
     color: var(--color);
@@ -21,7 +26,12 @@ body {
     padding-bottom: 90px;
     overflow-x: hidden;
 }
-
+.showMe{
+    visibility: visible;
+}
+.hideMe{
+    visibility: hidden;
+}
 #score{
     display: inline-block;
 }

@@ -19,11 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttTrack2 = document.querySelector('#butt2')
   const buttTrack3 = document.querySelector('#butt3')
   const buttTrack4 = document.querySelector('#butt4')
+  const resetButt = document.querySelector('#resetButton')
   const width = 10
   let nextRandom = 0
   let timerId
   let score = 0
   let clicks = 0
+  let rowCount = 1
   let menuClicked = false
   const colors = [
     'red',
@@ -380,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timerId = null
         BGMPause()
       } else {
+        document.getElementById('startButton').classList.add('showMe')
         pauseBool = false
         draw()
         console.log(idleBool)
@@ -405,6 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9]
 
       if (row.every(index => squares[index].classList.contains('taken'))) {
+
         score += 100
         scoreDisp.innerHTML = score
         clearPlay()
@@ -424,6 +428,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver() {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
       gameOverbool = true
+      document.getElementById('resetButton').classList.remove('hideMe')
+      document.getElementById('startButton').classList.add('hideMe')
+
       scoreDisp.innerHTML = 'GAME OVER! </br> TOTAL SCORE IS: ' + score
       BGMPause()
       gameOverPlay()
