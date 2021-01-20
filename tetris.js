@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let squares = Array.from(document.querySelectorAll('.gridContainer div'))
   const scoreDisp = document.querySelector('#Score')
   const startButt = document.querySelector('#startButton')
+  const pauseButt = document.querySelector('#pauseButton')
+  const cardView = document.querySelector('#instructionsCard')
   const buttTrack1 = document.querySelector('#butt1')
   const buttTrack2 = document.querySelector('#butt2')
   const buttTrack3 = document.querySelector('#butt3')
@@ -372,16 +374,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-  if (startButt) {
-    startButt.addEventListener('click', () => {
+  if (pauseButt) {
+    pauseButt.addEventListener('click', () => {
       if (timerId) {
+        document.getElementById('startButton').classList.remove('hideMe')
+        document.getElementById('instructionsCard').classList.remove('hideMe')
         pauseBool = true
         idleBool = false
         clearInterval(timerId)
         timerId = null
         BGMPause()
-      } else {
-        document.getElementById('startButton').classList.add('showMe')
+      }
+  })
+}
+
+  if (startButt) {
+    startButt.addEventListener('click', () => {
+        document.getElementById('startButton').classList.add('hideMe')
+        document.getElementById('instructionsCard').classList.add('hideMe')
         pauseBool = false
         draw()
         console.log(idleBool)
@@ -396,10 +406,10 @@ document.addEventListener('DOMContentLoaded', () => {
         var chosener = sessionStorage.getItem(chosen)
         myMusic = new Audio(musicList[chosener])
         BGMPlay()
+        document.getElementById('menuList').classList.add('hideMe')
         clicks++
-      }
-    })
-  }
+      })
+    }
 
 
   function addScore() {
@@ -427,8 +437,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver() {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
       gameOverbool = true
-      document.getElementById('resetButton').classList.remove('hideMe')
-      document.getElementById('startButton').classList.add('hideMe')
+      document.getElementById('gameOver').classList.remove('hideMe')
+      document.getElementById('instructionsCard').classList.remove('hideMe')
+      document.getElementById('inGame')
 
       scoreDisp.innerHTML = 'GAME OVER! </br> TOTAL SCORE IS: ' + score
       BGMPause()

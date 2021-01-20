@@ -4,12 +4,6 @@
     color: aliceblue;
 }
 
-.forceMargin {
-    margin-left: 50% !important;
-}
-.forceMarginContainer {
-    margin-left: 45% !important;
-}
 body {
     background-color: var(--background);
     color: var(--color);
@@ -25,6 +19,30 @@ body {
     position: relative;
     padding-bottom: 90px;
     overflow-x: hidden;
+}
+#instructionsCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 550px;
+    width: 600px;
+    z-index: 2;
+    background-color: rgb(58, 58, 58);
+}
+.centerage {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%);
+}
+.fullCenterage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 .showMe{
     visibility: visible;
