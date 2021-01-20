@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <script src="tetris.js" charset="utf-8"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+
+<head>
+    <meta charset="utf-8">
+    <script src="tetris.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="tetris.css">
+    <link rel="stylesheet" href="tetris.css">
     </link>
     <title>Not Tetris</title>
 </head>
@@ -14,44 +14,49 @@
 <body class="centerage">
     <div class="card centerage" id="instructionsCard">
         <div id="inGame">
-        <br>
-        <h1 >Good Day, Human!!</h1>
-        <br/>
-        <h3>So... It's exactly as you think, this is a Tetris Game</h3>
-        <br/>
-        <h4>The Rules for it is as follows:</h4>
-        <p>Controls: use the <strong style="color: blue">LEFT or RIGHT directional keys</strong> to shift left or right<br>
-            to speed up the the falling pieces, press the <strong style="color: blue">DOWN directional key</strong><br>
-            to rotate the pieces, press the <strong style="color: blue;">UP directional key</strong></p>
-            
+            <br>
+            <h1>Good Day, Human!!</h1>
+            <br />
+            <h3>So... It's exactly as you think, this is a Tetris Game</h3>
+            <br />
+            <h4>The Rules for it is as follows:</h4>
+            <p>Controls: use the <strong style="color: blue">LEFT or RIGHT directional keys</strong> to shift left or
+                right<br>
+                to speed up the the falling pieces, press the <strong style="color: blue">DOWN directional
+                    key</strong><br>
+                to rotate the pieces, press the <strong style="color: blue;">UP directional key</strong></p>
+
             <p>Pick a track below to choose which song you want to hear in the background</p>
             <p>(for no song, if you just opened the game on a new tab now, you can just skip to Go)</p>
             <p>Once picked, click on the <strong style="color: blue;">Start</strong> button to start the game</p>
-            <span class="centerage" id="menuList"><button id="butt1" class="btn btn-primary">Track 1</button> <button id="butt2" class="btn btn-primary">Track 2</button> <button id="butt3" class="btn btn-primary">Track 3</button> <button id="butt4" class="btn btn-primary"">Track 4</button></span>
+            <span class="centerage" id="menuList"><button id="butt1" class="btn btn-primary">Track 1</button> <button
+                    id="butt2" class="btn btn-primary">Track 2</button> <button id="butt3" class="btn btn-primary">Track
+                    3</button> <button id="butt4" class="btn btn-primary"">Track 4</button></span>
         <br/>
         <br/>
-            <button class="btn btn-primary centerage" id="startButton">Start</button>
+            <button class=" btn btn-primary centerage" id="startButton">Start</button>
         </div>
         <div class="hideMe centerage" style="position: absolute;" id="gameOver">
-            <h1 >That's too bad!!</h1>
-        <br/>
-        <h3>You gave it your best shot, but lost in the end</h3>
-        <br/>
-        <h4>But Hey! It's not really the end, is it?</h4>
-        <p>If you want to give it another shot, click on the <strong style="color: red">RESTART</strong> button
-            <br/>
+            <h1>That's too bad!!</h1>
+            <br />
+            <h3>You gave it your best shot, but lost in the end</h3>
+            <br />
+            <h4>But Hey! It's not really the end, is it?</h4>
+            <p>If you want to give it another shot, click on the <strong style="color: red">RESTART</strong> button
+                <br />
             <p>hope to hear from you again</p>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <button class="btn btn-danger centerage" id="resetButton" onclick="location.reload()">Restart</button>
         </div>
-        </div>
-        <h3 class="Score text-center">Score : <span id="Score">0</span></h3>
-        <div class="container">
-            <div class="gridContainer">
-                <div></div>
-                <div></div>
-                <div></div>
+    </div>
+    <br />
+    <h3 class="Score text-center">Score : <span id="Score">0</span></h3>
+    <div class="container">
+        <div class="gridContainer">
+            <div></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -287,18 +292,19 @@
             <div></div>
             <div></div>
             <div></div>
+            <br/>
             <h4>Next</h4>
         </div>
     </div>
-</br>
+    </br>
     <button class="btn btn-primary centerage" id="pauseButton">Pause</button>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 </body>

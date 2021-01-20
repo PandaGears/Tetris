@@ -379,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (timerId) {
         document.getElementById('startButton').classList.remove('hideMe')
         document.getElementById('instructionsCard').classList.remove('hideMe')
+        startButt.innerHTML = "Resume"
         pauseBool = true
         idleBool = false
         clearInterval(timerId)
