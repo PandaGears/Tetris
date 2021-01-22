@@ -28,15 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let clicks = 0
   let rowCount = 1
   let menuClicked = false
-  const colors = [
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'indigo',
-    'purple'
-  ]
+  const colors = ['red','orange','yellow','green','blue','indigo','purple', 'grey']
   function playTrack1() {
     sessionStorage.setItem(chosen, 0)
     return chosen
@@ -196,6 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function freeze() {
     if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+      current.forEach(index => {
+        squares[currentPosition + index].style.backgroundColor = colors[7]
+      })
       landPlay()
       score += 5
       scoreDisp.innerHTML = score
@@ -239,18 +234,18 @@ document.addEventListener('DOMContentLoaded', () => {
     return current.some(index => (currentPosition + index) % width === 0)
   }
 
-  function checkRotatedPosition(P) {
-    P = P || currentPosition
-    if ((P + 1) % width < 4) {
+  function checkRotatedPosition(pos) {
+    pos = pos || currentPosition
+    if ((pos + 1) % width < 4) {
       if (isAtRight()) {
         currentPosition += 1
-        checkRotatedPosition(P)
+        checkRotatedPosition(pos)
       }
     }
-    else if (P % width > 5) {
+    else if (pos % width > 5) {
       if (isAtLeft()) {
         currentPosition -= 1
-        checkRotatedPosition(P)
+        checkRotatedPosition(pos)
       }
     }
   }
@@ -440,9 +435,9 @@ document.addEventListener('DOMContentLoaded', () => {
       gameOverbool = true
       document.getElementById('gameOver').classList.remove('hideMe')
       document.getElementById('instructionsCard').classList.remove('hideMe')
-      document.getElementById('inGame')
+      document.getElementById('inGame').classList.add('hideMe')
 
-      scoreDisp.innerHTML = 'GAME OVER! </br> TOTAL SCORE IS: ' + score
+      scoreDisp.innerHTML = ' GAME OVER! </br> TOTAL SCORE IS: ' + score
       BGMPause()
       gameOverPlay()
       clearInterval(timerId)

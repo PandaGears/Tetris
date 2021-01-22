@@ -26,10 +26,24 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    height: 550px;
+    height: 600px;
     width: 600px;
     z-index: 2;
     background-color: rgb(58, 58, 58);
+}
+#inGame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 .centerage {
     position: absolute;
@@ -99,4 +113,10 @@ canvas{
 .miniGrid div {
     width: 20px;
     height: 20px;
+}
+
+.borderage {
+    border-style: double;
+    border-width: 5px;
+    border-color: white;
 }
