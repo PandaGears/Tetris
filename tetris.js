@@ -443,5 +443,4 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(timerId)
     }
   }
-
 })
