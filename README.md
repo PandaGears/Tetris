@@ -12,3 +12,15 @@
 To play the game, you can simply open the **tetris.html** file and press **START|PAUSE**
 
 however if you want sound, open **tetris_index.html** first, select from an assortment track, then press **GO**
+
+
+Images:
+
+Menu
+![Menu](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614324042/tetris/Screenshot_70_q23hct.png)
+Start
+![Start](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614324043/tetris/Screenshot_71_aifvb2.png)
+Progress
+![Progress](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614324043/tetris/Screenshot_72_mnly53.png)
+End
+![End](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614324042/tetris/Screenshot_73_fcpsrz.png)
