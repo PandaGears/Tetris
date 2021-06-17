@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: rgb(38, 38, 38);
     color: var(--color);
     background-image:url(https://res.cloudinary.com/ddrrwygt1/image/upload/v1607493741/tetris_tglydk.jpg);
     background-repeat: no-repeat;

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.gridContainer')
   let squares = Array.from(document.querySelectorAll('.gridContainer div'))
   const scoreDisp = document.querySelector('#Score')
-  const scoreDispEnd = scoreDisp
+  const scoreDispEnd = document.querySelector('#ScoreEnd')
   const startButt = document.querySelector('#startButton')
   const pauseButt = document.querySelector('#pauseButton')
   const cardView = document.querySelector('#instructionsCard')
@@ -451,12 +451,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function gameOver() {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+      scoreDispEnd.innerHTML = score
       gameOverbool = true
       document.getElementById('gameOver').classList.remove('hideMe')
       document.getElementById('instructionsCard').classList.remove('hideMe')
       document.getElementById('inGame').classList.add('hideMe')
 
-      scoreDispEnd.innerHTML = score
       BGMPause()
       gameOverPlay()
       clearInterval(timerId)
